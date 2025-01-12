@@ -8,7 +8,7 @@ def check_bookdata(database,table_name,category):
         mydb = pymysql.connect(
             host="localhost",
             user="root",
-            password="123456789$$"
+            password=""
         )
 
         # Creating a cursor to execute queries
@@ -167,7 +167,7 @@ def create_and_insert_books(database,table, books_list):
         mydb = pymysql.connect(
             host="localhost",
             user="root",
-            password="123456789$$"
+            password=""
         )
 
         # Creating a cursor to execute queries
@@ -282,13 +282,7 @@ def create_and_insert_books(database,table, books_list):
         if mydb:
             mydb.close()
 
-  
-# api_key='AIzaSyBtsFOoea0HRJ5BMki1IPGgN9MRvPwlpe8'
-# api_url='https://www.googleapis.com/books/v1/volumes'
-# book_category = 'novel'
-# scrapped_books_data = scrap_book_data(api_key, api_url, book_category, 1000, 40)[0]
-# processed_books_data = process_books_data(scrapped_books_data, book_category)
-# create_and_insert_books('scrappedbooks','books',processed_books_data)
+
 
 
 
