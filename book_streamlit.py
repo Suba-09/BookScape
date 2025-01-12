@@ -9,7 +9,7 @@ def get_connection():
     return pymysql.connect(
         host="localhost",
         user="root",
-        password="123456789$$",
+        password="",
         database="scrappedbooks",
         charset="utf8mb4"
     )
@@ -63,7 +63,7 @@ def display_extract_page():
             else:
                 st.write(f"Initiating to extract books of category {category}")
                 st.write('started to extract books')
-                api_key='AIzaSyBtsFOoea0HRJ5BMki1IPGgN9MRvPwlpe8'
+                api_key=''
                 api_url='https://www.googleapis.com/books/v1/volumes'
                 scrapped_data = scrap_book_data(api_key, api_url, category, 1000, 40)
                 processed_books_data = process_books_data(scrapped_data[0], category)
