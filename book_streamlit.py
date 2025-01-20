@@ -33,7 +33,7 @@ def display_home_page():
         """
         )
     st.markdown("""
-        Welcome to the **Book Scrapper - A Book Data Analysis Application**!  
+        Welcome to the **Bookscape Explorer - A Book Data Analysis Application**!  
         This app allows you to:
         - Scrap data from Google books of your favourite Category       
         - Search for and explore books.
@@ -53,6 +53,9 @@ def display_home_page():
 
 
 def display_extract_page():
+    """
+    function to display Extract Page
+    """
     options=['','Classics','Romance','Health','Food','Crime','Maths','Science','Novel','Fantacy','Poetry','Art','sports','Travel']
     category = st.selectbox("Select a category to extract books", options)
     if(st.button("Extact books")):
@@ -79,6 +82,9 @@ def display_extract_page():
             st.warning('Select a book category to start the extraction')
 
 def display_search_page():
+    """
+    Function to display Search page
+    """
     st.sidebar.header("Explore Books")
     title_filter = st.sidebar.text_input("Title")
     publisher_filter = st.sidebar.text_input("Publisher")
@@ -127,7 +133,11 @@ def display_search_page():
         st.dataframe(df1)
     else:
         st.write("No results found!")
+        
 def display_analyse_page():    
+    """
+    Function to display Analyse page
+    """
     st.sidebar.header("Frequently used Queries")
     faqDict = get_FAQ()
     queryList=list(faqDict.keys())
@@ -153,7 +163,12 @@ def display_analyse_page():
 def main():
     st.markdown(
     """
-    <h1 style='text-align: center;'>📚 Book Scrapper</h1>
+    <h1 style='
+    text-align: center; 
+    background-color: lightblue; 
+    padding: 20px; 
+    border-radius: 10px;'>
+    📚 Bookscape Explorer </h1>
     """,unsafe_allow_html=True
     )
     menu = ["Home", "Extract Books", "Search Books", "Analyse Books"]
