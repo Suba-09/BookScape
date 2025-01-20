@@ -3,6 +3,17 @@ import pymysql
 import pandas as pd
 
 def check_bookdata(database,table_name,category):
+    """ 
+    Check if the book category that is selected to scrape is already presented in database.
+
+    Parameters:
+    database (str): Name of the Database where we need to cross verify for the records.
+    table_name (str): Name of the Table where the Books data is stored.
+    category (str): Search query.
+    
+    Returns:
+    bool: True if category is already present else False
+    """  
     try:
         print("Establishing the sql  connection")
         mydb = pymysql.connect(
